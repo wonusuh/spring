@@ -29,7 +29,7 @@ public class JDBCTests {
 
 	@Test
 	public void testConnection() {
-		try (Connection con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/test_db", "book_ex",
+		try (Connection con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/test_db", "sample_ex",
 				"qwer1234")) {
 			log.info(con);
 
