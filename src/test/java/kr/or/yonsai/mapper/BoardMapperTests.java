@@ -65,7 +65,7 @@ public class BoardMapperTests {
 	public void testUpdate() {
 		BoardVO board = new BoardVO();
 //		실행 전 존재하는 번호인지 확인할 것
-		board.setBno(15);
+		board.setBno(14);
 		board.setTitle("modified title");
 		board.setContent("modified content");
 		board.setWriter("midified author");

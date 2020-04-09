@@ -45,8 +45,8 @@
 		UPDATE test_db.tbl_board
 		SET title = #{title},
 		content = #{content},
-		writer = #{writer}
-		<!-- updateDate = sysdate -->
+		writer = #{writer},
+		updatedate = current_timestamp()
 		WHERE bno = #{bno}
 	</update>
 
