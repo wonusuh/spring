@@ -30,12 +30,14 @@ public class BoardServiceimpl implements BoardService {
 
 	@Override
 	public boolean modify(BoardVO board) {
-		return false;
+		log.info("modify.........." + board);
+		return mapper.update(board) == 1;
 	}
 
 	@Override
 	public boolean remove(int bno) {
-		return false;
+		log.info("remove.........." + bno);
+		return mapper.delete(bno) == 1;
 	}
 
 	@Override

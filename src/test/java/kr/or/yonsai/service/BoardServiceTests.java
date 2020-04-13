@@ -42,4 +42,20 @@ public class BoardServiceTests {
 	public void testGet() {
 		log.info(service.get(1));
 	}
+
+	@Test
+	public void testDelete() {
+//		게시물 번호의 존재여부를 확인하고 테스트 할 것
+		log.info("REMOVE RESULT : " + service.remove(25));
+	}
+
+	@Test
+	public void testUpdate() {
+		BoardVO board = service.get(1);
+		if (board == null) {
+			return;
+		}
+		board.setTitle("제목 수정합니다.");
+		log.info("MODIFY RESULT : " + service.modify(board));
+	}
 }
