@@ -10,7 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -57,6 +56,14 @@ public class BoardControllerTests {
 				.perform(MockMvcRequestBuilders.post("/board/modify").param("bno", "1").param("title", "수정된 테스트 새글 제목")
 						.param("content", "수정된 테스트 새글 내용").param("writer", "user00"))
 				.andReturn().getModelAndView().getViewName();
+		log.info(resultPage);
+	}
+
+	@Test
+	public void testRemove() throws Exception {
+//		삭제 전 데이터베이스에 게시물 번호를 확인할 것
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove").param("bno", "30")).andReturn()
+				.getModelAndView().getViewName();
 		log.info(resultPage);
 	}
 }
