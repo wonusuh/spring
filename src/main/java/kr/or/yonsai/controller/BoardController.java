@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.or.yonsai.domain.BoardVO;
 import kr.or.yonsai.service.BoardService;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
@@ -31,6 +32,11 @@ public class BoardController {
 		service.register(board);
 		rttr.addFlashAttribute("result", board.getBno());
 		return "redirect:/board/list";
+	}
+
+	@GetMapping("/register")
+	public void register() {
+
 	}
 
 	@GetMapping("/get")

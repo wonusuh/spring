@@ -1,4 +1,4 @@
-package kr.or.yonsai;
+package kr.or.yonsai.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

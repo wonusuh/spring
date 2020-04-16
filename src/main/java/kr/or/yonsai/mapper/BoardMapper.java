@@ -5,7 +5,7 @@ package kr.or.yonsai.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Select;
+//import org.apache.ibatis.annotations.Select;
 
 import kr.or.yonsai.domain.BoardVO;
 
