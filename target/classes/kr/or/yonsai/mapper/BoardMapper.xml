@@ -3,12 +3,11 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.yonsai.mapper.BoardMapper">
+
 	<select id="getList" resultType="kr.or.yonsai.domain.BoardVO">
-	
 	<![CDATA[
 		SELECT * FROM tbl_board WHERE bno > 0
 	]]>
-
 	</select>
 
 	<insert id="insert">
@@ -56,7 +55,8 @@
 		resultType="kr.or.yonsai.domain.BoardVO">
 		SELECT * FROM test_db.tbl_board
 		ORDER BY bno DESC
-		LIMIT #{offsetNum},
+		LIMIT
+		#{offsetNum},
 		#{amount}
 	</select>
 
