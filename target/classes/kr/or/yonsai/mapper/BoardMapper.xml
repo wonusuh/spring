@@ -44,10 +44,20 @@
 	<update id="update">
 		UPDATE test_db.tbl_board
 		SET title = #{title},
-		content = #{content},
+		content
+		= #{content},
 		writer = #{writer},
 		updatedate = current_timestamp()
-		WHERE bno = #{bno}
+		WHERE
+		bno = #{bno}
 	</update>
+
+	<select id="getListWithPaging"
+		resultType="kr.or.yonsai.domain.BoardVO">
+		SELECT * FROM test_db.tbl_board
+		ORDER BY bno DESC
+		LIMIT #{offsetNum},
+		#{amount}
+	</select>
 
 </mapper>
