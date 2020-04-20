@@ -58,12 +58,12 @@ public class BoardMapperTests {
 //		BoardVO board = mapper.read(5);
 //		log.info(board);
 //	}
-
+//
 //	@Test
 //	public void testDelete() {
 //		log.info("DELETE COUNT : " + mapper.delete(18));
 //	}
-
+//
 //	@Test
 //	public void testUpdate() {
 //		BoardVO board = new BoardVO();
@@ -75,16 +75,28 @@ public class BoardMapperTests {
 //		int count = mapper.update(board);
 //		log.info("UPDATE COUNT : " + count);
 //	}
-
+//
+//	@Test
+//	public void testPagig() {
+//		Criteria cri = new Criteria();
+//		// 10개씩 3페이지
+//		cri.setPageNum(3);
+//		cri.setAmount(5);
+//		cri.updateOffsetNum();
+//		List<BoardVO> list = mapper.getListWithPaging(cri);
+//		list.forEach(board -> log.info(board.getBno()));
+//	}
+//
 	@Test
-	public void testPagig() {
+	public void testSearch() {
+
 		Criteria cri = new Criteria();
-		// 10개씩 3페이지
-		cri.setPageNum(3);
-		cri.setAmount(5);
-		cri.updateOffsetNum();
+		cri.setKeyword("새로");
+		cri.setType("TC");
+
 		List<BoardVO> list = mapper.getListWithPaging(cri);
-		list.forEach(board -> log.info(board.getBno()));
+
+		list.forEach(board -> log.info(board));
 	}
 
 }
