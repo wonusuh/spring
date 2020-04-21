@@ -101,11 +101,18 @@
 					</ul>
 				</div>
 				<!-- end Pagination -->
+
+				<!-- actionForm -->
 				<form id='actionForm' action="/board/list" method='get'>
 					<input type="hidden" name='pageNum'
 						value='${pageMaker.cri.pageNum }' /> <input type="hidden"
-						name='amount' value='${pageMaker.cri.amount }' />
+						name='amount' value='${pageMaker.cri.amount }' /> <input
+						type="hidden" name='type'
+						value='<c:out value="${pageMaker.cri.type}" />' /> <input
+						type="hidden" name='keyword'
+						value='<c:out value="${pageMaker.cri.keyword}" />' />
 				</form>
+
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
@@ -190,7 +197,7 @@
 
 	$("#searchForm button").on("click", function(e) {
 
-		if (!searchForm.find("option : selected").val()) {
+		if (!searchForm.find("option:selected").val()) {
 			alert("검색종류를 선택하세요.");
 			return false;
 		}
