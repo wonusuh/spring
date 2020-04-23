@@ -11,7 +11,7 @@
 	</select>
 
 	<insert id="insert">
-		INSERT INTO test_db.tbl_board
+		INSERT INTO tbl_board
 		(title, content, writer)
 		VALUES(#{title}, #{content}, #{writer})
 	</insert>
@@ -22,11 +22,11 @@
 			FROM information_schema.TABLES
 			WHERE
 			TABLE_SCHEMA
-			= "test_db"
+			= "sample_db"
 			AND TABLE_NAME ="tbl_board"
 		</selectKey>
 
-		INSERT INTO test_db.tbl_board
+		INSERT INTO tbl_board
 		(bno, title, content, writer)
 		VALUES(#{bno}, #{title}, #{content}, #{writer})
 	</insert>
@@ -41,7 +41,7 @@
 	</delete>
 
 	<update id="update">
-		UPDATE test_db.tbl_board
+		UPDATE tbl_board
 		SET title = #{title},
 		content
 		= #{content},
@@ -54,7 +54,7 @@
 	<select id="getListWithPaging"
 		resultType="kr.or.yonsai.domain.BoardVO">
 		SELECT *
-		FROM test_db.tbl_board
+		FROM tbl_board
 		<trim prefix="where (" suffix=")" prefixOverrides="or">
 			<foreach item="type" collection="typeArr">
 				<trim prefix="or">
@@ -78,7 +78,7 @@
 
 	<select id="getTotalCount" resultType="int">
 		SELECT count(*) from
-		test_db.tbl_board where bno > 0
+		tbl_board where bno > 0
 	</select>
 
 </mapper>
